@@ -46,5 +46,13 @@
 "vdots":{
 	"prefix": "vdots",
 	"body": "\\vdots &"
+},
+"definition":{
+	"prefix": "defition",
+	"body": "`DEF`"
+},
+"remark":{
+	"prefix": "rk",
+"body": "`RK`"
 }
 }
