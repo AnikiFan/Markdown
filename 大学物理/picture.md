@@ -27,3 +27,27 @@ $$
 $$
 E_{kmin}=-qU_{ro}=q(U_o-U_r)=q\int_0^R\frac{aQ}{ 4\pi\varepsilon_0R^3}\mathrm{d}a=\frac{qQ}{8\pi\varepsilon_0R}
 $$
+
+原电容器储能为 $$
+\frac{1}{2}CU^2=\frac{Q^2}{2C}
+$$
+其中Q为极板所带电量,因为电源充电后断开,所以极板所带电量不变
+极板间距离增大至n倍后电容器电容值变为原先的1/n倍,储能变为原先的n倍,因此外力所做功为原电容器储能的n-1倍,即 $$
+\frac{n-1}{2}CU^2
+$$
+
+设单位长度的内柱表面带的电荷为$\lambda$,则内外柱之间距轴线r处的电场强度为
+$$
+\frac{\lambda}{2\pi\varepsilon r}
+$$
+因此当达到所能承受的最大电压时内柱处的电场强度为$E_0$
+两极板间电压为 $$
+\int^{r_外}_{r_内}\frac{\lambda}{2\pi\varepsilon r}dr=\frac{\lambda}{2\pi\varepsilon}\ln\frac{r_外}{r_内}=r_内E_0\ln\frac{r_外}{r_内}
+$$
+$$
+(r_内E_0\ln\frac{r_外}{r_内})'=0时
+$$
+$$r_内=\frac{r_外}{e}$$
+所以最高电压为 $$
+\frac{200\times2kV}{e}
+\approx147kV$$
