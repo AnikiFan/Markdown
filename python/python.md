@@ -69,3 +69,48 @@ print(l)
 
 ## 第三节课
 `None`
+
+## 第五节课
+
+lambda 函数可以用于行内定义新函数
+
+```python
+add = lambda x,y : x+y
+print(add(1,2))
+```
+
+map 函数可以将一个函数应用于一个或多个可迭代对象的所有元素
+
+```python 
+def cube(x):
+    return x**3
+
+nums = (1,2,3,4,5)
+cubes = map(cube,nums)
+
+def to_upper(x):
+    return x.upper()
+
+person = {'name':'Alice','age':25}
+names = map(to_upper,person.keys())
+```
+
+filter 函数可以根据指定的条件筛选出符合条件的元素
+
+```python
+numbers = [1,2,3,4,5]
+result = list(filter(lambda x:x%2 == 0,numbers))
+print(result)
+```
+
+可以用*解包列表
+
+```python
+my_list = [1,2,3,4,5]
+# 将列表解包成独立的元素传递给函数
+result = my_func(*my_list)
+```
+
+这等价于`result = my_func(my_list[0],my_list[1],my_list[2],my_list[3],my_list[4])`
+
+字典则是用**来解包
