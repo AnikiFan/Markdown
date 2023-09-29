@@ -61,6 +61,34 @@ h6::before{
 <center>学号:2254298 </center>
 <center>日期:202*年*月*日</center>
 
+<pre class="pseudocode">
+
+% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+\begin{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p < r$} 
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] < x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}
+</pre>
 <!--
 &emsp;&emsp;缩进这样写`&emsp;`可以缩进一个汉字
 啊啊啊啊啊啊啊啊啊
@@ -74,8 +102,10 @@ int main()
 ```
 -->
 
+
 ## 涉及数据结构和相关背景
 <!--报告内不要大段贴代码，尽量控制在20页以内-->
+
 ## 试验内容
 
 ### ***
