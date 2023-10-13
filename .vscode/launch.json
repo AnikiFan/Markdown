@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Coding/homework_for_data_structure/数据结构实现/栈和队列/栈",
-      "program": "d:/Coding/homework_for_data_structure/数据结构实现/栈和队列/栈/build/Debug/outDebug",
+      "cwd": "d:/Coding/homework_for_data_structure/week4",
+      "program": "d:/Coding/homework_for_data_structure/week4/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
