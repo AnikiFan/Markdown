@@ -708,23 +708,44 @@ operator 类型名()
 声明方法为
 
 ```cpp
-class 派生类名：private/public（取其一，默认为private）基类名{
+class 派生类名：private/public/protected（取其一，默认为private）基类名{
     根据需要加入特有成员
+    public:
+    private:
+    protected:
 }
 ```
+
+其中protected成员如果在没有继承的场景下，则和private性质一样。在继承时，派生类对应成员的类别会有差异。
 
 ### 空间问题
 
 派生类对象所占空间=基类数据成员所占空间总和+派生类数据成员所占空间总和
 
+### 属性继承问题
+
+|基类属性|是否继承|
+|--|--|
+|成员函数|除构造和析构函数外都继承|
+|数据成员|全部继承，但不一定可以访问|
+|友元|不继承|
+
 ### 访问权限问题
 
-派生类可访问的成员函数=基类的成员函数（除构造和析构函数外）+派生类的成员函数
+|派生方式\基类成员类型|public|private|protected|
+|--|--|--|--|
+|public|派生类的public|基类的private|派生类的protected|
+|private|派生类的private|基类的private|派生类的private|
+|protected|派生类的protected|基类的private|派生类的protected|
 
-派生类会基础基类的全部数据成员，但不一定都可以访问。
+也就是说，一个类的private永远只是它的private，被继承时其访问权不会被继承。继承方式决定的时public和protected被继承后的类型。
 
-派生类不会继承友元。
+public会保持基类的public和protected属性，而protected首先是特殊的private，会将public和protect变为对外不可访问，同时由于是protected，所以是都变为protected，而不是private。
 
-如果是公有派生和私有派生的区别在于public数据成员的继承上，前者会继承为public，后者会即继承为自身的private，和从基类继承下来的private成员又有所区别，后者的private是对基类自身而言的，所以即使继承下来后，也无法直接访问，只能通过公共函数的方式进行访问。
+自己类的private成员和从基类继承下来的private成员有所区别，后者的private是对基类自身而言的，所以即使继承下来后，也无法直接访问，只能通过公共函数的方式进行访问。
+
+### 多级派生
 
 当存在多级派生的现象时，权限逐级确定。
+
+实际使用中，用于派生的基类的成员属性不使用`private`，继承方式使用`public`，这样能保证各个成员的访问权限不会随着继承而改变。
